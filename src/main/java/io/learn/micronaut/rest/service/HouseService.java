@@ -2,7 +2,6 @@ package io.learn.micronaut.rest.service;
 
 import io.learn.micronaut.rest.entity.House;
 import io.learn.micronaut.rest.repository.HouseRepository;
-import jakarta.inject.Inject;
 import jakarta.inject.Singleton;
 
 import java.util.List;
