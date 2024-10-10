@@ -28,17 +28,23 @@ public class HouseController {
 
     @Post
     @Status(HttpStatus.CREATED)
-    Boolean save(@Body House savingHouse) {
+    House save(@Body House savingHouse) {
         return houseService.save(savingHouse);
     }
 
     @Put
-    Boolean update(@Body House updatingHouse) {
+    @Status(HttpStatus.ACCEPTED)
+    House update(@Body House updatingHouse) {
         return houseService.save(updatingHouse);
     }
 
     @Delete("/{houseId}")
     Boolean delete(@PathVariable String houseId) {
         return houseService.delete(houseId);
+    }
+
+    @Delete
+    Boolean deleteAll() {
+        return houseService.deleteAll();
     }
 }

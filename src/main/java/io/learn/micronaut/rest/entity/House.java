@@ -5,7 +5,7 @@ import io.micronaut.data.annotation.Id;
 import io.micronaut.data.annotation.MappedEntity;
 
 @MappedEntity
-public class House {
+public class House implements Cloneable {
 
     @Id
     @GeneratedValue
@@ -63,5 +63,22 @@ public class House {
 
     public void setZipCode(Integer zipCode) {
         this.zipCode = zipCode;
+    }
+
+    @Override
+    public String toString() {
+        return "House{" +
+                "number=" + number +
+                ", id='" + id + '\'' +
+                ", streetName='" + streetName + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", zipCode=" + zipCode +
+                '}';
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }

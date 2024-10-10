@@ -23,13 +23,17 @@ public class HouseService {
         return houseRepository.findById(id).get();
     }
 
-    public boolean save(House house) {
-        houseRepository.save(house);
-        return true;
+    public House save(House house) {
+        return houseRepository.save(house);
     }
 
     public boolean delete(String id) {
         houseRepository.deleteById(id);
+        return true;
+    }
+
+    public Boolean deleteAll() {
+        houseRepository.deleteAll();
         return true;
     }
 }
